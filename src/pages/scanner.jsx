@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Html5QrcodeScanner } from 'html5-qrcode';
-
+import "./scanner.css"
 
 
 const Scanner = () => {
@@ -9,28 +9,34 @@ const Scanner = () => {
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
-      'reader',
-      { fps: 5, qrbox: { width: 300, height: 300 } },
-      /* verbose= */ false
+      'reader', 
+      {
+        fps: 5, 
+        qrbox: { width: 300, height: 300 }, 
+        formatsToSupport: ['QR_CODE', 'CODE_128'],
+      },
+      false 
     );
 
-    scanner.render(
-      (decodedText, decodedResult) => {
-        console.log('Decoded Text:', decodedText, decodedResult);
-        setBarcode(decodedText); 
-      },
-      (error) => {
-        console.warn('Scan Error:', error); // Handle errors if needed
-      }
-    );
+    const handleResult = (decodedText) => {
+      console.log('Decoded Text:', decodedText);
+      setBarcode(decodedText);
+    };
+
+    const handleError = (error) => {
+      console.warn('Scan Error:', error);
+    };
+
+    scanner.render(handleResult, handleError);
 
     return () => {
       scanner.clear();
     };
-  }, []);
+  }, []); 
+
 
   return (
-    <div>
+    <div id='scannerContainer'>
       <h1>Barcode Scanner</h1>
       <div id="reader" ref={scannerRef}></div>
       <p>Detected Barcode: {barcode}</p>

@@ -1,0 +1,13 @@
+
+#scannerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+}
+
+
+#reader{
+    width: 500px;
+    height: 500px;
+}
