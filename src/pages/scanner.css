@@ -11,3 +11,13 @@
     width: 500px;
     height: 500px;
 }
+
+.AddButton {
+    background: white;
+    height: 5rem;
+    width: 12rem;
+    border: none;
+    margin-top: 2rem;
+    border-radius: 70px;
+    cursor: pointer;
+}
