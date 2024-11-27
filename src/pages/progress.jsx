@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cookies from 'js-cookie';
 import { useEffect } from "react";
+import Pal from "../components/Pal";
 const Progress = () => {
   const [calories, setCalories] = useState(0)
   function GetCals()
@@ -15,8 +16,9 @@ const Progress = () => {
   return (
     <div className='Container'>
         <h1>PROGRESS</h1>
-        <h1>Todays Current Calorie Count: {calories}</h1>
-        <h1>Your Goal: 2000 Calories</h1>
+
+        <Pal overrideMsg={`Current Calorie count: ${calories}
+              Current Goal: 2000`}></Pal>
     </div>
   );
 };

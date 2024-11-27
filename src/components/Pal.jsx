@@ -2,7 +2,7 @@ import HappyCat from "../assets/HappyCat.png"
 //import MadCat from "../assets/AngryCat.png"
 import "./Pal.css"
 
-const Pal = () => {
+const Pal = (props) => {
     const goodMessage = ["You're doing great on your goals!", 
         "Wow, keep up the good progress!", "MEOW your progress is the cats meow :3" , 
         "PURR, good job on reaching you're goals brother", 
@@ -16,9 +16,9 @@ const Pal = () => {
     ]
     const num = Math.floor(Math.random() * goodMessage.length);
     return (
-        <div className="pal-container">
-            <div className="speech-bubble">{goodMessage[num]}</div>
-            <img src={HappyCat} className="pal-image" />
+        <div className={`pal-container${props.overrideMsg ? "lg" : ""}`}>
+            <div className={`speech-bubble${props.overrideMsg ? "lg" : ""}`}>{props.overrideMsg ? props.overrideMsg : goodMessage[num]}</div>
+            <img src={HappyCat} className={`pal-image${props.overrideMsg ? "lg" : ""}`} />
       </div>
     )
 }
