@@ -1,9 +1,15 @@
 
 .Container{
-    color: black;
+    color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.Text-Container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 .Container button {
     background: white;
     height: 3rem;
@@ -15,4 +21,17 @@
 
 .Padding{
     height: 100vh;
+}
+
+.StockPhoto{
+    border-radius: 10%;
+    margin-bottom: 1rem;
+    width: 20rem;
+    height: auto;
+}
+
+.desc{
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    width: 25rem;
 }

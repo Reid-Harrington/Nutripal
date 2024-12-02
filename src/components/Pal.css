@@ -1,6 +1,6 @@
 .pal-container {
     position: fixed;
-    bottom: 200px;
+    bottom: 250px;
     right: 10px;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     color: #333;
     padding: 10px 15px;
     border-radius: 15px;
-    font-size: 14px;
+    font-size: 21px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
     text-align: center;
@@ -62,8 +62,8 @@
   }
   
   .pal-image {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: auto;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     object-fit: cover;
